@@ -1,0 +1,484 @@
+@charset "utf-8";
+/* CSS Document */
+#erweima{ margin-top:200px; margin-left:30px; position:absolute; display:none;}
+
+.t1000 p{text-align:left;}
+.t1000 span{text-align:right;}
+
+	.mask{
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+			-webkit-transition:all .5s ease-in;
+			transition:all .5s ease-in;
+			color:rgba(255,255,255,0);
+			
+		}
+	.info{
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			left: 0;
+			text-align: center;
+			-webkit-transform:translateY(-50%);
+		}
+.t10 > div :hover .mask{
+			background-color:rgba(0,0,0,0.5);
+			color:rgba(255,255,255,1);
+		}
+
+	   
+.wrap{
+	max-width: 640px;
+	 margin: 0 auto; 
+	 overflow: hidden; 
+	 min-height: 100%; 
+	 background-color: #fff; }
+	  
+/*底部导航栏*/ 
+.nav{
+	 position: fixed; 
+     bottom: 0; 
+	 max-width: 640px; 
+	 width: 100%; 
+	 height: 4.25rem; 
+	 border-top: 1px solid #999; 
+	 overflow: hidden; 
+	 background-color: #fff; 
+	 z-index: 999;} 
+	 
+.nav a {
+	 position: relative; 
+	 width: 20%; 
+	 height: 100%;
+	 float: left; 
+	 color: #999; 
+	 text-align: center;} 
+
+.nav a span{
+	 position: absolute; 
+	 left: 50%; 
+	 top: 50%; 
+	 transform: translate(-50%,-50%); 
+	 -webkit-transform: translate(-50%,-50%); 
+	 width: 3rem; 
+	 height: 4rem; 
+	 background-image:url(../images/mWeiyi/%E5%BA%95%E7%AB%AF%E5%AF%BC%E8%88%AA1.jpg); 
+	 background-repeat: no-repeat; 
+	 background-size: 3rem 40rem; overflow: hidden; } 
+	 
+.nav .goods-num,.nav .goods-num-active{font-size: 0.8rem; 
+	 position: absolute; 
+	 top: 0.1rem; 
+	 right: 1.6rem; 
+	 padding: 0 0.2rem; 
+	 height: 1rem; 
+	 display: inline-block; 
+	 line-height: 1.1rem; 
+	 color: #fff; 
+	 border-radius: 1.1rem; 
+	 background: none; 
+	 background-color: #b81c22; 
+	 cursor: default; 
+	 text-align: center; } 
+	 
+.nav .nav-home{background-position: 0rem 0rem; } 
+
+.nav .nav-home-active {background-position: 0rem -20rem; } 
+
+.nav .nav-search {background-position: 0rem -4rem; } 
+
+.nav .nav-search-active{background-position: 0rem -24rem; } 
+
+.nav .nav-Tshirt{background-position: 0rem -8rem; } 
+
+.nav .nav-Tshirt-active{background-position: 0rem -28rem; } 
+
+.nav .nav-shopcart{background-position: 0rem -12rem; } 
+
+.nav .nav-shopcart-active{background-position: 0rem -32rem; } 
+
+.nav .nav-me{background-position: 0rem -16rem; } 
+
+.nav .nav-me-active{background-position: 0rem -36rem; } 
+
+/*顶部搜索和消息*/ 
+.index-search{
+	position: fixed; 
+	top: 0; 
+	max-width: 640px; 
+	width: 100%; 
+	height: 4rem;
+	overflow: hidden;
+	background: #b81c20; 
+	z-index: 999; } 
+
+.search-form{
+	position: absolute; 
+	left:0.9rem; 
+	top:50%; 
+	transform: translateY(-50%); 
+	-webkit-transform: translateY(-50%); 
+	width: 85%; 
+	height: 2.2rem; 
+	line-height: 2.9rem; 
+	background-color: #fff; 
+	border-radius: 0.3rem; 
+	overflow: hidden;} 
+
+.index-search .search-icon{
+	position: absolute; 
+	left:0; 
+	top:50%; 
+	transform: translateY(-50%); 
+	-webkit-transform: translateY(-50%); 
+	display: inline-block; 
+	margin-left: 0.8rem; 
+	width: 1.5rem; 
+	height: 1.5rem; 
+	border:0;
+	background:url(../images/mWeiyi/search2.png) no-repeat; 
+	background-size: contain; 
+	cursor: pointer; } 
+
+.index-search .search-input{
+	font-size: inherit; 
+	position: absolute; 
+	left:3.3rem; 
+	top:50%; 
+	transform: translateY(-50%); 
+	-webkit-transform: translateY(-50%); 
+	width: 85%; 
+	height: 85%; 
+	display: inline-block; 
+	border: 0 none; 
+	vertical-align:middle;} 
+
+.index-message{
+	position: absolute;
+	top: 50%; 
+	right: 0.9rem; 
+	transform: translateY(-50%); 
+	-webkit-transform: translateY(-50%); 
+	width: 1.8rem; 
+	height: 1.3rem; 
+	display: inline-block; 
+	background: url(../images/mWeiyi/msg3.png) no-repeat; 
+	background-size: cover; 
+	-webkit-background-size: 1.8rem 1.3rem; 
+	cursor: pointer; } 
+
+.index-message .hasNewMsg{
+	position: absolute; 
+	top: -0.2rem; 
+	right: -0.5rem; 
+	border: 0.2rem solid #fff; 
+	border-radius: 0.2rem; 
+	display: none;}
+
+ /*头部标题栏*/ 
+ .topTitle{
+	position: relative;
+	top: 0;
+	max-width: 640px;
+	width: 100%;
+	height: 4rem;
+	overflow: hidden;
+	background: #C00;
+	text-align: center;
+	line-height: 4rem;
+	background-color: #990000;
+} 
+
+.topTitle .topBack{
+	position: absolute; 
+	top: 50%; left: 2rem; 
+	transform: translateY(-50%) rotate(45deg); 
+	-webkit-transform: translateY(-50%) rotate(45deg); 
+	width: 1.4rem; 
+	height: 1.4rem; 
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #fff;
+	cursor: pointer; } 
+	
+.topTitle .curTitle{
+	display: inline-block; 
+	margin: 0 auto; 
+	font-size: 1.5rem; 
+	color:#000 } 
+
+/*内容部分*/ 
+.index-content{
+	position: relative; 
+	top: 4rem; 
+	margin-bottom: 4.25rem; 
+	max-width: 640px; 
+	width: 100%; 
+	height: 100%; 
+	background-color: #f2f2f2; } 
+
+.others-content{
+	position: relative; 
+	top: 0rem; 
+	margin-bottom: 4.25rem; 
+	max-width: 640px; 
+	width: 100%; 
+	height: 100%; 
+	background-color: #fff; 
+	line-height: 1.5;} 
+	
+/* 弹出搜索框 */
+.search-popup{
+	position: fixed; 
+	top: 4rem; 
+	max-width: 640px; 
+	width: 100%; 
+	height: 100%; 
+	display: none; 
+	color: #fff; 
+	background-color: rgba(0,0,0,0.8); 
+	z-index: 1000; } 
+
+.hotwords{
+	width: 100%; 
+	padding-bottom: 0.5rem; 
+	border-bottom: 1px solid #fff; 
+	overflow-x: hidden; } 
+
+.hotwords p{
+	margin: 0.5rem auto 0.5rem 1rem; 
+	color: #999; } 
+
+.swiper-slide {
+	text-align: center; 
+	/*width: 6rem;*/ 
+	cursor: pointer; 
+	/* Center slide text vertically */ 
+	display: -webkit-box; 
+	display: -ms-flexbox; 
+	display: -webkit-flex; 
+	display: flex; 
+	-webkit-box-pack: center; 
+	-ms-flex-pack: center; 
+	-webkit-justify-content: center; 
+	justify-content: center; 
+	-webkit-box-align: center; 
+	-ms-flex-align: center; 
+	-webkit-align-items: center; 
+	align-items: center; } 
+
+.search-history span{
+	margin: 0.5rem auto 0.5rem 1rem; 
+	display: block; 
+	color: #999; } 
+
+.search-history li{
+	margin-top: 0.5rem; 
+	padding-left: 1.5rem; 
+	padding-bottom: 0.5rem; 
+	display: block; 
+	border-bottom: 1px solid #fff; 
+	cursor: pointer; } 
+
+.clear-srhHistory{
+	width: 35%; 
+	height: 2rem; 
+	line-height: 2rem; 
+	margin: 1rem auto 0; 
+	border: 1px solid #fff; 
+	border-radius: 2px; 
+	text-align: center; 
+	cursor: pointer; }
+/*</style> <style type="text/css"> */       
+
+.t11, .t8, .t9, .t1000, .t10, .t2000 {width: 100%; overflow: hidden; margin-top: 2px; } 
+
+.t11 > div:first-child {margin-left: -3px; } 
+
+.t11 > div:last-child {margin-right: -3px; } 
+
+.t111 {width: 25%; } 
+
+.t111, .t1001, .t91 {float: left; } 
+
+.t111 {display: block; line-height: 0; margin: 0 1px; } 
+
+.t1001, .t82, .t821, .t82 > div:last-child, .t8, .t10, .t91 {display: block; line-height: 0; } 
+
+
+
+
+
+
+
+.t1001 h2{ margin-top: -1.8em; font-size:1.1em; line-height:1.5em; text-align:center}
+.t1001 p{  position:relative; font-size:1.2em; margin-top:2.5em; height:auto; line-height:0.8em; text-align:center;}
+
+.about-us{ background:#900; color:#000; font-size:1.6em; text-align:center; margin-top:0.2em;}
+
+
+.t1000 > div:first-child, .t91:first-child {margin: 0 1px 0 -1px; } 
+
+.t1000 > div:last-child, .t91:last-child {margin: 0 -1px 0 1px; } 
+
+.t111 img, .t1001 img, .t10 img, .t91 img, .t2000 img {width: 100%; height: auto; } 
+
+.t111 a, .t1001 a, .t10 a, .t91 a, .t2000 a {display: block; line-height: 0; width: 100%; } 
+
+.t1001, .t91 {width: 50%; overflow: hidden; } 
+
+.t81 {float: left; } 
+
+.t82 {float: right; } 
+
+.t8 {height: 18.1em; } 
+
+.t81, .t82 {width: 50%; height: 18.1em; } 
+
+.t81 div {width: 100%; height: 100%; } 
+
+.t821, .t82 > div:last-child {width: 100%; height: 9em; } 
+
+.t81 img, .t82 img {width: 100%; height: 100%; } 
+
+.t82 > div:last-child {margin-top: 0.1em; } 
+
+.t81 {margin-left: -1px; } 
+
+.t82 {margin-right: -1px; } 
+
+.footer {margin-bottom: 5em; } 
+
+.box {position: fixed; bottom: 0; left:0; z-index: 999; width:100%;background-color: #ededed;}
+ 
+.img-a{width:100%;display:block;}
+
+.img-a img{width:100%;}
+
+.off-a{
+	width:2.4em;
+	height:2.4em;
+	position:absolute;
+	top:0;
+	left:0;}
+        
+.countDown{
+	width:100%;
+	height:2em;
+	background-color: #b81b22;
+	text-align:center;}
+
+.countDown a{
+	width:100%;
+	color:#fff;
+	display:inline-block;
+	line-height:2em;
+	font-weight:bold;}
+        
+.countDownShow{
+	margin:0 2em;
+	padding:0 1em; 
+	color:#b81b22;
+	background-color:#fff;display: 
+	inline-block;transform: 
+	skew(-20deg);-webkit-transform: skew(-20deg);}
+
+.countDownShow>span{display: inline-block;transform: skew(20deg);}
+
+.countDownT a{
+	width:100%;
+	height:2.5em;
+	display:block;
+	background:url(http://i5.m.vancl.com/oms/2016_7_27_15_16_36_5919_640x50.jpg) no-repeat;
+	background-size: cover;}
+
+.countDownInA a{
+	width:100%;
+	height:2.5em;
+	display:block;
+	background:url(http://i5.m.vancl.com/oms/2016_7_27_15_16_36_5919_640x50.jpg) no-repeat;
+	background-size: cover;}
+
+.charge-countDown{
+	display: block; 
+	width: 100%; 
+	height: 5rem; 
+	background: url(http://i3.m.vancl.com/oms/2016_11_8_15_13_29_3294_640x100.jpg) no-repeat top center; 
+	background-size: cover; 
+	text-align: center; 
+	color: #fff;
+	font-size: 1.2rem;}
+
+.charge-countDown span{
+	display: inline-block; 
+	margin-top: 0.6rem; 
+	font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
+
+.charge-countDown .countDown-text{font-size: 1rem;}
+
+#zapin {
+	position: fixed; 
+	height: 100%; 
+	width: 100%; 
+	z-index: 9999; 
+	background: white; 
+	display: none;}
+
+#zapin a {
+	width:100%;
+	max-width:640px;
+	position: absolute; 
+	top: 50%;
+	left:50%; 
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);}
+	
+	
+	
+	
+ .product-category{
+            background-color: #e5e5e5;}
+        .product-title-panel{
+            float: left;
+            width: 25%;
+            height: 100%;
+        }
+        .product-title-panel>ul{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .product-title-panel .product-title{
+            display: block;
+            height: 3rem;
+            line-height: 3rem;
+            border-bottom: 1px solid #fff;
+            cursor: pointer;
+        }
+        .product-title-active{
+            background-color: #fff;
+            color:#CC0000;
+        }
+        .product-con{
+            width: 75%;
+            float: right;
+            display: none;
+            background-color: #fff;
+        }
+        .product-con>ul li{
+            display: inline-block;
+            width: 33%;
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .product-con li span{
+            display: block;
+            color: #999;
+        }
+        .product-con li img{
+            display: block;
+            margin: 0.5rem auto;
+            width: 75%;
+        }

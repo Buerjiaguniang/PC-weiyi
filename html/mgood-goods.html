@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>唯一商城--mWeiyi</title> 
+<link href="../css/mWeiyi-css.css" rel="stylesheet" type="text/css" /> 
+<link href="../css/mWeiyi-style.css" rel="stylesheet"  type="text/css"/>
+<script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+</head> 
+ <body> 
+ <div class="wrap">
+      <div class="topTitle" onClick="MM_goToURL('parent','mgoods.html');return document.MM_returnValue"> 
+           <span id="topBack" class="topBack"></span> 
+           <span class="curTitle">返回</span> 
+      </div> 
+<!-- 内容部分 --> 
+      <div class="others-content"> 
+             <div class="t1000"> 
+                   <div class="t1001"> 
+                         <div><a href="mgood-goods.html" target="_parent"><img src="../images/mWeiyi/iamges/m-goods/gift1.jpg"></a></div> 
+                  </div> 
+               <div class="t1001"> 
+                      
+                         <!--<img src="../images/mWeiyi/price.jpg"></div>-->
+                 <p>圣诞特辑 十二星座礼盒</p>
+                 <p>波兰发货 顺丰包邮</p>
+                 <p>￥799.00</p>
+                       <div class="login-btn-1"> 
+                          <a href="m购物车.html">立即购买</a>
+                          
+                      </div>
+                       <div class="login-btn-2"> 
+                        <a href="m购物车.html">加入购物车</a>
+                       </div>
+                 </div> 
+              </div>
+              
+              <div class="about-us">
+                  <p>关于我们</p>
+              </div>
+              <div class="about-us-tell">
+                  <img src="../images/mWeiyi/iamges/about.jpg">
+                  <img src="../images/mWeiyi/iamges/make01.jpg">
+                  <img src="../images/mWeiyi/iamges/goto.jpg">
+                  <img src="../images/mWeiyi/iamges/reason01.jpg">
+                  <img src="../images/mWeiyi/iamges/reason02.jpg">
+                  <img src="../images/mWeiyi/iamges/reason03.jpg">
+                  <img src="../images/mWeiyi/iamges/reason04.jpg">
+                  <img src="../images/mWeiyi/iamges/reason05.jpg">
+              </div>
+      </div>
+
+    <div id="nav" class="nav clear"> 
+        <a href="../mWeiyi.html"><span id="nav-home" class="nav-home"></span></a> 
+        <a href="mgoods.html"><span id="nav-search" class="nav-search"></span></a> 
+        <a href="../pc-mainpage.html"><span id="nav-Tshirt" class="nav-Tshirt"></span></a> 
+        <a href="m购物车"><span id="nav-shopcart" class="nav-shopcart"></span> <i id="pcount" class="goods-num">0</i> </a> 
+        <a href="m购物车"><span id="nav-me" class="nav-me"></span></a> 
+    </div> 
+</div> 
+
+<script src="../js/zepto.min.js"></script> 
+<script src="../js/h5trace.min.js" defer></script>
+<script type="text/javascript">
+        /*客户端去头js start*/
+        Zepto(function ($) {
+            var bIsAndroid = false;
+            var bIsIOS = false;
+            if ("object" == typeof (AndroidEnv)) {
+                // 判断是在Android环境中
+                bIsAndroid = true;
+            }
+            // IOS code: window.webkit.messageHandlers.OOXX.postMessage("Hello WebKit!")
+            else if ("object" == typeof (window.webkit)
+                    && "object" == typeof (window.webkit.messageHandlers)
+                    && "object" == typeof (window.webkit.messageHandlers.IOSEnv)
+                    && "function" == typeof (window.webkit.messageHandlers.IOSEnv.postMessage)) {
+                // 判断是在IOS环境中
+                bIsIOS = true;
+            } else {
+
+                // 判断不是Android或者Ios
+            }
+            function hideHeaderFooter() {
+                $(".topTitle").css('display', 'none');
+                //$(".nav").css('display', 'none');
+            }
+            if (bIsAndroid || bIsIOS) {                   // Android IOS 环境下，去掉页头页尾
+                hideHeaderFooter();
+            }
+        });
+        /*客户端去头js end*/
+
+    Zepto(function($) {
+        // 初始化头部状态栏
+        // (function(){})(window);
+        $("#topBack").on('click', function(event) {
+            event.preventDefault();
+            window.history.back();
+            /* Act on the event */
+        });
+
+        //激活底部导航栏目标元素
+        (function(){
+            var targetHrefHash = window.location.hash;
+            var targetHref = window.location.pathname=="/"? true:false;
+            switch(targetHrefHash){
+                case "":
+                if (targetHref) {
+                    $("#nav-home").attr('class', 'nav-home-active');
+                }
+                break;
+                case "#nav_search":
+                $("#nav-search").attr('class', 'nav-search-active');
+                break;
+                case "#nav_Tshirt":
+                $("#nav-Tshirt").attr('class', 'nav-Tshirt-active');
+                break;
+                case "#nav_shopcart":
+                $("#nav-shopcart").attr('class', 'nav-shopcart-active');
+                break;
+                case "#nav_me":
+                $("#nav-me").attr('class', 'nav-me-active');
+                break;
+                default:
+                var childs = $("#nav").children().find('span');
+                for (var i = childs.length - 1; i >= 0; i--) {
+                    var child = childs[i];
+                    var childClass = $(child).attr("class");
+                    var hasActiveClass = childClass.indexOf("active")>0? true:false;
+                    var deactiveClass = childClass.substring(0,childClass.indexOf("active")-1);
+                    if(hasActiveClass){
+                        $(child).attr("class",deactiveClass);
+                        break;
+                    }
+                }
+            }
+        })(window);
+    });
+    </script> <script type="text/javascript">
+
+Zepto(function($){
+
+    // 设置product-con最小高度
+    (function(){
+        var HproTitPan = $('.wrap').height()-$('.topTitle').height()-$('.nav').height();
+        $('.product-con').css('min-height',HproTitPan);
+    })(window);
+
+    //给每个title绑定点击事件
+    $('.product-title').on('click',function(event) {
+        event.preventDefault();
+        var isActive = $(this).hasClass('product-title-active');
+        if(isActive){
+            return false;
+        }
+        $('.product-title').removeClass('product-title-active');
+        $(this).addClass('product-title-active');
+        var index = $(this).index();
+        $('.product-con').hide();
+        var parentCon = $('.product-con').eq(index);
+        parentCon.show();
+        var hasLi = parentCon.find('li').length==0? true:false;
+        if(hasLi){
+            var goryId = parseInt($(this).attr('goryId'));
+            showMenu(parentCon,goryId);
+        }
+    });
+
+    //显示推荐类
+    (function(){
+        $('.product-title-panel li').first().click();
+    })(window);
+
+    function showMenu(trigger, pId){
+        var categoryId = '';
+        var keyWord = '';
+        ajaxJSON(trigger, categoryId, keyWord, pId);
+    }
+
+    function ajaxJSON(parentCon, cateId, keyWord, np){
+        //获取子菜单
+        var params = {
+            cateId: cateId,
+            np: np,
+            cateref: ""
+        };
+        window.showModel = false;
+        $.ajax({
+            url: '/Product/AjaxSonCateList',
+            data: params,
+            dataType: "JSON",
+            success: function (d) {
+                var dJson = $.parseJSON(d);
+                dJson.forEach(function(index){
+                    var textNode = $('<span></span>').text(index.TypeName);
+                    var imgNode = $('<img />').attr('src',index.Logo);
+                    var liNode = $('<li></li>').append(imgNode,textNode).on('click', function(event) {
+                        event.preventDefault();
+                        /* Act on the event */
+                        window.location.href = "/Product/ProductList?cateId="+ index.CateID + "&keyWord=" + index.KeyWord + "&TopName=" + index.TypeName;
+                    });
+                    $(parentCon).find('ul').append(liNode);
+                });
+                return true;                 
+            }, error: function (a, b, c) {                
+            }            
+        });
+    }
+});
+</script> </body> </html>

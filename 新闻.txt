@@ -1,0 +1,44 @@
+drop database if exists New;
+create database New;
+use New;
+
+drop table if exists user;
+create table user(
+   userid int auto_increment primary key not null,
+   username varchar(10) not null,
+   password varchar(10),
+   superuser varchar(2)
+);
+
+drop table if exists new;
+create table new(
+   n_id int auto_increment primary key not null,
+   n_title varchar(10) not null,
+   n_author varchar(10),
+   n_content varchar(50),
+   n_link varchar(20),
+   n_date date,
+   n_pic varchar(50)
+);
+
+
+
+
+insert into user values(1,'admin','admin','1');
+insert into user values(2,'dd','123','2');
+insert into user values(3,'ll','123','2');
+insert into user values(4,'aa','123','2');
+
+
+insert into new values('1','王菲演唱会天价门票','唯一','天价门票','http','2016/12/12','1.jpg');
+insert into new values('2','美国大选','唯一','奥巴马','http','2016/12/14','2.jpg');
+insert into new values('3','火车票不能乱涨价','唯一','春运','http','2016/12/16','3.jpg');
+insert into new values('4','王思聪','唯一','个人飞机','http','2016/12/16','3.jpg');
+insert into new values('5','虹桥一姐','唯一','追星','http','2016/12/22','3.jpg');
+insert into new values('6','叙利亚停火','唯一','中东','http','2016/12/25','3.jpg');
+insert into new values('7','深化改革','唯一','习近平','http','2016/12/26','3.jpg');
+insert into new values('8','曹云金讨片筹案','唯一','官司','http','2016/12/27','3.jpg');
+insert into new values('9','天后演唱会门票跳价','唯一','王菲','http','2016/12/28','3.jpg');
+
+
+
