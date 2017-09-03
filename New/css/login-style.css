@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+body{ background:#fff}
+#banner{ margin-top:5px; margin-left:40px;}
+
+#contain{ width:700px; height:400px; background-color:red; margin-left:40px;}
+#contain p{ margin-top:20px; margin-left:150px; font-size:20px; float:left;}
+#contain img{ margin-top:10px; margin-left:10px; float:left;}
+#login{ width:550px; height:400px; background-color:blue; margin-left:770px; margin-top:-400px;}
+.login-span{ width:550px; height:50px; background:#CCC; float:left;}
+.login-span span{ font-size:22px; margin-left:30px; margin-top:65px; color:#000;}
+.login-span p{font-size:22px; margin-left:10px; margin-top:20px; color:#000;}
+.login-span a{font-size:22px; margin-left:10px; margin-top:20px; color:#F00; text-decoration:none;}

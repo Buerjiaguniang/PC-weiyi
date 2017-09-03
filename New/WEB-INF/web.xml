@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>New</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter> 
+    <filter-name>Authority</filter-name> 
+    <filter-class>util.Authority</filter-class> 
+  </filter> 
+	<filter-mapping> 
+    	<filter-name>Authority</filter-name> 
+    	<url-pattern>/admin/*</url-pattern> 
+	</filter-mapping> 
+	<servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SelectNewServlet</servlet-name>
+        <servlet-class>servlet.SelectNewServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SelectNewServlet</servlet-name>
+        <url-pattern>/selectNewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddnewServlet</servlet-name>
+        <servlet-class>servlet.AddnewServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddnewServlet</servlet-name>
+        <url-pattern>/addnewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletenewServlet</servlet-name>
+        <servlet-class>servlet.DeletenewServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeletenewServlet</servlet-name>
+        <url-pattern>/deletenewServlet</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>SelectUserServlet</servlet-name>
+        <servlet-class>servlet.SelectUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SelectUserServlet</servlet-name>
+        <url-pattern>/selectUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdatenewServlet</servlet-name>
+        <servlet-class>servlet.UpdatenewServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdatenewServlet</servlet-name>
+        <url-pattern>/updatenewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdatenewServlet2</servlet-name>
+        <servlet-class>servlet.UpdatenewServlet2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdatenewServlet2</servlet-name>
+        <url-pattern>/updatenewServlet2</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>servlet.UploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/uploadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UploadServlet2</servlet-name>
+        <servlet-class>servlet.UploadServlet2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet2</servlet-name>
+        <url-pattern>/uploadServlet2</url-pattern>
+    </servlet-mapping>
+    
+    
+</web-app>

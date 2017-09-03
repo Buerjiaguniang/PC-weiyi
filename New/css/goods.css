@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+#goods{ width:1320px; height:500px; }
+.goods-photo img{width:400px; height:400px; margin-top:50px; margin-left:40px;}
+.goods-menu{ font-size:36px; color:#000; margin-top:-430px; margin-left:660px; float:left; text-align:center;}
+.goods-price{margin-top:-200px; margin-left:700px; float:left;font-size:34px;}
+.goods-buy{margin-top:-80px; margin-left:640px; float:left; }
+.goods-buy img:hover{ background-color:#F00;}
+#reason{ background-color:fff; text-align:center; margin-top:40px;}
+#clear{ width:1320px; height:64px; background-color:fff;}

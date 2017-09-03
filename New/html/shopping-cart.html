@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../images/logo.svg" rel="shortcut icon" type="image/x-icon" />
+<title>唯一商城--购物车</title>
+ <meta name="description" content="">
+    <link href="../css/global.css" type="text/css" rel="stylesheet"  />
+    <link href="../css/order.css" type="text/css" rel="stylesheet"  />
+    <script type="text/javascript" src="../js/jquery.1.8.2.min.js" ></script>
+	<script src="../js/common.js" type="text/javascript"></script><!--=实现顶部菜单动画  -->
+	<script src="../js/slides.js" type="text/javascript"></script><!--=实现图片轮播  -->
+	<script src="../js/shopCart.js" type="text/javascript"></script><!--=实现统计结算  -->
+						
+</head>
+
+<body>
+    
+<!--=S header  -->
+<div class="header">
+	<div class="head_box">
+			<div class="head_top clearfix">
+				<div class="head_top_l">
+					<p>欢迎来到唯一商城！</p>
+					<a href="login.jsp" class="login">请登录</a>
+					<a href="#" class="regis">免费注册</a>
+				</div>
+				<ul class="head_top_r">
+					<li class="j_list">
+						<a href="#" class="top_name">个人中心</a>
+						<i class="arrow"></i>
+						<div class="down_user j_down" style="display:none;">
+							<dl class="bt">
+								
+								<dd><a href="#">个人信息</a></dd>
+								<dd><a href="#">个人订单</a></dd>
+							</dl>
+							
+						</div>
+					</li>
+					<li class="j_list">
+						<a href="#" class="top_name">最近购物</a>
+						<i class="arrow"></i>
+						<div class="down_order j_down"  style="display:none;">
+							<div class="on">
+								<p class="tit">最近购买的货品：</p>
+								<div class="info clearfix">
+									<a class="pro_pic" href="#"><img src="../images/flower/4.jpg" /></a>
+									<div class="cen">
+										<a href="#">紫睡莲</a>
+										<p>数量：1</p>
+										<p>价格：<i>699.00</i>元×1</p>
+									</div>
+									<a href="javascript:;" class="del">删除</a>
+								</div>
+								<a href="#" class="look_order" ></a>
+							</div>
+							<div class="off">
+								<p>您的购物车还没有货品，赶紧选购吧！</p>
+							</div>
+						</div>
+					</li>
+					<li class="j_list">
+						<a href="#" class="top_name">收藏夹</a>
+						<i class="arrow"></i>
+						<div class="down_mark j_down" style="display: none;">
+							
+						</div>
+					</li>
+					<li>
+					
+					</li>
+					<li class="j_list">
+						<a href="#" class="top_name">客服中心</a>
+						<i class="arrow"></i>
+						<div class="down_sev j_down" style="display: none;">
+							<a href="#">帮助中心</a>
+							
+							<a href="#">在线客服</a>
+						</div>
+
+					</li>
+					<li class="last_l j_list">
+						<a href="#" class="top_name">网站导航</a>
+						<i class="arrow"></i>
+						<div class="down_nav j_down" style="display: none;">
+							<dl class="clearfix">
+								<dt>资讯</dt>
+								<dd class="f_l"><a href="#">商城新闻</a></dd>
+								<dd class="f_r"><a href="#">市场资讯</a></dd>
+							</dl>
+							<dl class="clearfix">
+								<dt>安全交易</dt>
+								<dd class="f_l"><a href="#">卖家保障 </a></dd>
+								<dd class="f_r"><a href="#">商家认证</a></dd>
+								<dd class="f_l"><a href="#">工商打假</a></dd>
+							</dl>
+							<dl class="clearfix bt">
+								<dt>帮助</dt>
+								<dd class="f_l"><a href="#">帮助中心</a></dd>
+							</dl>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	
+</div>
+
+<div class="wrap">
+	<div class="logo">
+    	<h1><img src="../images/bt.jpg" width="296" height="108" /></h1>
+    </div>
+    <div class="buy_nav carl_nav">
+    	<ul class="steps-info clearfix">
+			<li class="on"><s class="first"></s>购物车<i></i></li>
+			<li ><s></s>确认订单<i></i></li>
+			<li><s></s>付款<i></i></li>
+			<li><s></s>完成</li>
+		</ul>
+    </div>	
+</div>
+
+<div class="carl">
+    <div class="wrap">
+    	<div class="content">
+        	<!--=结算金额-->
+        	<div class="mt clearfix">
+            	<div class="mt_l f_l">购物车状态（<span><i class="j_sumnum">2</i>/ 100</span>）</div>
+                <div class="mf_r f_r">
+                	<div class="mf_r_num">数量总计： <span>0</span> 件</div>
+                    <div class="mf_r_price">货品金额总计（不含运费）： <span>0</span> 元</div>
+                    <div class="mf_sub"><a href="check-goods.html">确认下单</a></div>
+                </div>
+            </div>
+            
+            <div class="mc_nav">
+            	<ul class="mc_t clearfix">
+                	<li class="lis1">货品</li>
+                    <li class="lis2">单价（元）</li>
+                    <li class="lis3">数量</li>
+                    <li class="lis5">金额（元）</li>
+                    <li class="lis6">操作</li>
+                </ul>
+            </div>
+            
+            <div class="mc">
+            	<input type="hidden" name="protype" isWholesale = "0" />
+                <div class="carInput clearfix">   
+                	<input class="f_l checklist"  type="checkbox" name="store_id" value="77ec02a1a25f4cf89186d0e6cf129a38"/>
+                	
+                	<div class="adds f_l">供应商：<a href="#">磐石主义 鲜花区</a> </div> 
+                </div>
+                <ul class="mc_c clearfix">
+                	<li class="lis1">	
+                			
+                    	<input class="f_l checkSin" name="sku_id" type="checkbox" value="cf0ff9af213e4cf2af944ff37b6de90b"/>
+                    	<div class="prodt f_l">
+                    		
+                            <div class="prodt_pic f_l"><img src="../images/flower/1.jpg" width="262" height="350" /></div>
+                            <div class="prodt_text f_l">
+                                <p class="prodt_name"><a href="#">洋桔梗包月（顺丰包邮 每周一配送）</a></p>
+                              <div class="prodt_norms clearfix">
+                                    <div class="prodt_color f_l">数量：1                              <span></span></div>
+                              </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="j_proprice">
+                    	<p class="on">￥199.00  </p>
+                        <input type="hidden" price="100" min="5" />
+                        <input type="hidden" price="90" min="10" />
+                        <input type="hidden" price="80" min="30" />
+                    </li>
+                    <li class="lis3 j_pronum">
+                    	<div class="lis3_con clearfix">
+                    		
+                    		<input type="hidden" name="stock" value="100">
+                            <a class="btns2 btn_l" href="javascript:;"></a>               
+                            <div class="btns2 inp"><input type="text" value="1" name="skuBuyNumber"/></div>
+                                 
+                            <a class="btns2 btn_r" href="javascript:;"></a>
+                        </div>
+                        <span class="num_prompt">数量或金额不满足商家规则</span>
+                    </li>
+                    <li class="lis5">199.00</li>
+                    <li class="lis6">
+                    	<a href="javascript:;">移至收藏</a><br>
+                        <a class="j_prodel" href="javascript:;">删除</a>
+                    </li>
+                </ul>
+            </div>     
+            <div class="mc">
+            	<input type="hidden" name="protype" isWholesale = "0" />     	
+                <div class="carInput clearfix">          
+                
+                	<input class="f_l checklist"  type="checkbox" name="store_id" value="77ec02a1a25f4cf89186d0e6cf129a38"/>       	
+                	
+                	<div class="adds f_l">供应商：<a href="#">磐石主义 礼盒区</a> </div>
+                </div>
+                <ul class="mc_c clearfix">
+                	<li class="lis1">
+                	
+                		
+                    	<input class="f_l checkSin" name="sku_id" type="checkbox" value="cf0ff9af213e4cf2af944ff37b6de90b"/>
+                    	<div class="prodt f_l">
+                    
+                            <div class="prodt_pic f_l"><img src="../images/lh/production1-2.jpg" width="800" height="800" /></div>
+                            <div class="prodt_text f_l">
+                            	
+                              <p class="prodt_name">少女心礼盒（美国发货 顺丰包邮）</p>
+                              <div class="prodt_norms clearfix">
+                                	
+                                <div class="prodt_color f_l">数量：1<span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li  class="j_proprice">
+                   	  <p price="100" class="on" min="1">￥799.00  </p>           
+                        <input type="hidden" price="100" min="5" />
+                        <input type="hidden" price="90" min="10" />              
+                    </li>
+                    <li class="lis3 j_pronum">
+                    	<div class="lis3_con clearfix">
+                    	
+                    		<input type="hidden" name="stock" value="100">
+                            <a class="btns2 btn_l" href="javascript:;"></a>               
+                           
+                            <div class="btns2 inp"><input type="text" value="1" name="skuBuyNumber"/></div>
+                            
+                            <a class="btns2 btn_r" href="javascript:;"></a>
+                        </div>
+                        <span class="num_prompt">数量或金额不满足商家规则</span>
+                    </li>
+                    <li class="lis5">799.00 </li>
+                    <li class="lis6">
+                    	<a href="javascript:;">移至收藏</a><br>
+                        <a class="j_prodel" href="javascript:;">删除</a>
+                    </li>
+                </ul>          	
+            	<ul class="mc_c failure clearfix">
+                	<li class="lis1">
+                    	<span class="f_l title">失效</span>
+                    	<div class="prodt f_l">
+                            <div class="prodt_pic f_l"><img src="../images/qx/hds.jpg" width="800" height="800" /></div>
+                            <div class="prodt_text f_l">
+                                <p class="prodt_name"><a href="#">蝴蝶心包月（顺丰包邮 每周一配送）</a></p>
+                              <div class="prodt_norms clearfix">    
+                                数量：2
+                                </div>
+                          </div>
+                        </div>
+                    </li>               
+                    <li  class="j_proprice">￥299..00  
+                      <input type="hidden" price="100" min="5" />
+                        <input type="hidden" price="90" min="10" />
+                    </li>             
+                    <li class="lis3 j_pronum">
+                    	<div class="lis3_con">1</div>
+                    </li>
+                    <li class="lis5">100.00 </li>
+                    <li class="lis6">
+                        <a class="j_prodel" href="javascript:;">删除</a>
+                    </li>
+                </ul>     
+            </div>	
+            <!--=确认下单-->
+            <div class="mf_nav_box">
+				
+	            <div class="mf mf_nav clearfix">
+	            	<div class="mf_l f_l">
+	                    <label><input type="checkbox" name="checkinp" class="checkAll">全选</label>
+	                    <span class="mf_l_del">删除所选</span>
+	                    <span>批量收藏</span>
+	                </div>
+	                <div class="mf_r f_r">
+	                	<div class="mf_r_num">数量总计： <span>0</span> 件</div>
+	                    <div class="mf_r_price">货品金额总计（不含运费）： <span>0</span> 元</div>
+	                    <div class="mf_sub"><a href="check-goods.html">确认下单</a></div>
+	                </div>
+	            </div>
+            
+            </div>
+        </div>
+    	
+    	<div class="others">
+        	<div class="others_con">
+            	<ul class="clearfix others_con_ul">
+            		<li>
+	                	<div class="others_con_list">
+	                    	<div class="others_pic">
+	                        	<a href="#"><img src="../images/flower/2.jpg"/></a>
+	                        </div>
+	                        <div class="others_foot">
+	                            <p class="others_name"><a href="#"></a></p>
+	                            <div class="others_price clearfix">
+	                                <strong class="f_l">￥575.00</strong>
+	                                <span class="f_r">1</span>
+	                            </div>
+	                            <div class="others_btn">
+	                                <a href="#">
+	                                    <s></s>
+	                                    <span>加入购物车</span>
+	                                </a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                     <div class="others_con_list">
+	                    	<div class="others_pic">
+	                        	<a href="#"><img src="../images/flower/5.jpg"/></a>
+	                        </div>
+	                        <div class="others_foot">
+	                            <p class="others_name"><a href="#">蝴蝶兰</a></p>
+	                            <div class="others_price clearfix">
+	                                <strong class="f_l">￥568.00</strong>
+	                                <span class="f_r">1</span>
+	                            </div>
+	                            <div class="others_btn">
+	                                <a href="#">
+	                                    <s></s>
+	                                    <span>加入购物车</span>
+	                                </a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                   	<div class="others_con_list">
+	                    	<div class="others_pic">
+	                        	<a href="#"><img src="../images/qx/production1-3.jpg"/></a>
+	                        </div>
+	                        <div class="others_foot">
+	                            <p class="others_name"><a href="#">蔓越莓曲奇</a></p>
+	                            <div class="others_price clearfix">
+	                                <strong class="f_l">￥125.00</strong>
+	                                <span class="f_r">1</span>
+	                            </div>
+	                            <div class="others_btn">
+	                                <a href="#">
+	                                    <s></s>
+	                                    <span>加入购物车</span>
+	                                </a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="others_con_list">
+	                    	<div class="others_pic">
+	                        	<a href="#"><img src="../images/lh/production1-4.jpg"/></a>
+	                        </div>
+	                        <div class="others_foot">
+	                            <p class="others_name"><a href="#">花花世界礼盒</a></p>
+	                            <div class="others_price clearfix">
+	                                <strong class="f_l">￥1314.00</strong>
+	                                <span class="f_r">1</span>
+	                            </div>
+	                            <div class="others_btn">
+	                                <a href="#">
+	                                    <s></s>
+	                                    <span>加入购物车</span>
+	                                </a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                	</li>
+	                	<li style="display: none;">
+		                	<div class="others_con_list">
+		                    	<div class="others_pic">
+		                        	<a href="#"><img src="../images/fruit/mghsg.jpg"/></a>
+		                        </div>
+		                        <div class="others_foot">
+		                            <p class="others_name"><a href="#">美国红蛇果</a></p>
+		                            <div class="others_price clearfix">
+		                                <strong class="f_l">￥69.00</strong>
+		                                <span class="f_r">1</span>
+		                            </div>
+		                            <div class="others_btn">
+		                                <a href="#">
+		                                    <s></s>
+		                                    <span>加入购物车</span>
+		                                </a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                     <div class="others_con_list">
+		                    	<div class="others_pic">
+		                        	<a href="#"><img src="../images/fruit/production1-1.jpg"/></a>
+		                        </div>
+		                        <div class="others_foot">
+		                            <p class="others_name"><a href="#"><泰国蛇皮果a></p>
+		                            <div class="others_price clearfix">
+		                                <strong class="f_l">￥234.00</strong>
+		                                <span class="f_r">1</span>
+		                            </div>
+		                            <div class="others_btn">
+		                                <a href="#">
+		                                    <s></s>
+		                                    <span>加入购物车</span>
+		                                </a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                   	<div class="others_con_list">
+		                    	<div class="others_pic">
+		                        	<a href="#"><img src="../images/lh/production1-5.jpg"/></a>
+		                        </div>
+		                        <div class="others_foot">
+		                            <p class="others_name"><a href="#">水果小皇国</a></p>
+		                            <div class="others_price clearfix">
+		                                <strong class="f_l">￥799.00</strong>
+		                                <span class="f_r">1</span>
+		                            </div>
+		                            <div class="others_btn">
+		                                <a href="#">
+		                                    <s></s>
+		                                    <span>加入购物车</span>
+		                                </a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="others_con_list">
+		                    	<div class="others_pic">
+		                        	<a href="#"><img src="../images/flower/production1-4.jpg"/></a>
+		                        </div>
+		                        <div class="others_foot">
+		                            <p class="others_name"><a href="#">乒乓菊</a></p>
+		                            <div class="others_price clearfix">
+		                                <strong class="f_l">￥245.00</strong>
+		                                <span class="f_r">1</span>
+		                            </div>
+		                            <div class="others_btn">
+		                                <a href="#">
+		                                    <s></s>
+		                                    <span>加入购物车</span>
+		                                </a>
+		                            </div>
+		                        </div>
+		                    </div>
+	                	</li>
+	                </ul>
+	        </div>
+            <a class="btns btn_l prev" href="javascript:;"></a>
+            <a class="btns btn_r next" href="javascript:;"></a>
+        </div>
+        
+        
+    </div>	
+</div>
+
+
+<!--=S footer  -->
+<div class="wrap">
+    <div class="footer">
+        <p class="text">
+           <br>
+           
+        </p>
+    </div>
+</div>
+<!--=E footer  -->
+
+ 
+<div class="backUp">返回<br/>顶部</div>   
+    
+    
+</body>
+</html>
